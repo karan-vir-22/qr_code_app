@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code Generator</title>
+
+
+
+  <style>
+    body{
+    margin : 0;
+    padding : 0;
+    background-color:#31363F;
+    box-sizing: border-box;
+    }
+    .main{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 92vh;
+      flex-direction: column;
+    }
+    h1{
+      color : white;
+    }
+    .form{
+      width : 350px;
+      height : 380px;
+      background-color: beige;
+      border-radius: 20px;
+    }
+
+    form{
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      justify-content: center;
+      align-items: center;
+      gap:20px;
+
+    }
+    .input{
+      height: 30px;
+      padding-left: 10px;
+      width: 100%;
+    }
+
+    form label{
+      font-size: large;
+    }
+
+    .btn{
+      background-color: #22ccfc; 
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      
+    }
+    .one{
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      width: 100%;
+    }
+    .two{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50%;
+      width: 80%;
+      padding: 20px;
+
+    }
+    .img{
+      height: 100%;
+      width:100%;
+    }
+    footer{
+      width: 100%;
+      background-color: beige;
+      color: black;
+      height: 8vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+  </style>
+
+
+
+</head>
+<body>
+  <div class="main">
+  <h1>QR Code Generator</h1> 
+  <div class="form">
+  <form method="POST" action="/generate">
+    <div class="one">
+    <input  class="input" type="text" id="data" name="data" placeholder="Enter URL or Text">
+    </div>
+    <div class="one">
+    <input class="btn input" type="submit" value="Generate QR Code">
+    </div>
+    <div class="two">
+      <img class="img" src="https://th.bing.com/th/id/OIP.V81YaH_nGzVG4PVxpSEkoAHaFB?w=256&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="oppo">
+      </div>
+  </form>
+  
+</div>
+  {% if error %}
+    <p style="color: red; font-size: large;">{{ error }}</p>
+  {% endif %}
+</div>
+
+<footer>
+  <h4>Made with ❤️ by Karanvir Singh</h4>
+</footer>
+</body>
+</html>
