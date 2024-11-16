@@ -8,6 +8,7 @@
 
   <style>
     body{
+
     margin : 0;
     padding : 0;
     background-color:#31363F;
@@ -26,7 +27,7 @@
     }
     .form{
       width : 350px;
-      height : 380px;
+      height : 404px;
       background-color: beige;
       border-radius: 20px;
     }
@@ -37,7 +38,7 @@
       padding: 30px;
       justify-content: center;
       align-items: center;
-      gap:20px;
+      gap:18px;
 
     }
     .input{
@@ -67,7 +68,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 50%;
+      height: 48%;
       width: 80%;
       padding: 20px;
 
@@ -86,6 +87,9 @@
       justify-content: center;
       
     }
+
+
+    
   </style>
 
 
@@ -99,6 +103,15 @@
     <div class="one">
     <input  class="input" type="text" id="data" name="data" placeholder="Enter URL or Text">
     </div>
+    <div>
+    <div class="input"><label for="fill_color">QR Code Color:  </label>
+      <input style="padding: 0 ; border: radius 5px;; border: 0; margin-left: 10px;" type="color" id="fill_color" name="fill_color" value="#000000"></div>
+        
+        <div class="inout" ><label style="font-size: xx-smali; align-items: center;" for="back_color">Background Color:  </label>
+          <input style="padding: 0 ; border: radius 5px;; border: 0; margin-left: 10px;" type="color" id="back_color" name="back_color" value="#ffffff">
+          </div>
+          
+      </div>
     <div class="one">
     <input class="btn input" type="submit" value="Generate QR Code">
     </div>
@@ -108,13 +121,13 @@
   </form>
   
 </div>
-  {% if error %}
+  <!-- {% if error %}
     <p style="color: red; font-size: large;">{{ error }}</p>
-  {% endif %}
+  {% endif %} -->
 </div>
 
 <footer>
-  <h4>Made with ❤️ by Karanvir Singh</h4>
+  <h4>Made by Karanvir Singh</h4>
 </footer>
 </body>
 </html>

@@ -11,6 +11,8 @@ def index():
 @app.route('/generate', methods=['POST'])
 def generate():
   data = request.form.get('data')
+  fill_color = request.form.get('fill_color', 'black')  # Default to black
+  back_color = request.form.get('back_color', 'white')  # Default to white
   if not data:
     return render_template('index.html', error="Please enter some data to generate QR code.")
   
@@ -25,10 +27,13 @@ def generate():
   # Add data to QR code
   qr.add_data(data)
   qr.make(fit=True)
+
+  # Generate the QR code image
+  img = qr.make_image(fill_color=fill_color, back_color=back_color).convert('RGB')
   
   # Create an image buffer
   img_buffer = BytesIO()
-  qr.make_image(fill_color="black", back_color="white").save(img_buffer, format="PNG")
+  img.save(img_buffer, format="PNG")
   img_buffer.seek(0)
   
   return send_file(img_buffer, mimetype="image/png", download_name="qr_code.png")
